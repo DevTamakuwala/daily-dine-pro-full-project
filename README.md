@@ -1,70 +1,113 @@
-# Getting Started with Create React App
+# Daily Dine Pro – Full Project Overview
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This repository **daily-dine-pro-full-project** is the central documentation hub for the complete **Daily Dine Pro** ecosystem.
 
-## Available Scripts
+Daily Dine Pro is a platform that connects **customers** with **mess owners**, helping users discover nearby messes, view daily menus, and manage operations through dedicated interfaces for admins, mess owners, and customers.
 
-In the project directory, you can run:
+The full project is split into three main repositories:
 
-### `npm start`
+- **Admin Web Panel (React.js)**
+- **Customer, Mess Owner & Admin Mobile App (Flutter)**
+- **Backend REST API (Spring Boot)**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🔗 Repositories
 
-### `npm test`
+### 1. Admin Panel – React.js
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Repository:**  
+👉 https://github.com/DevTamakuwala/daily-dine-pro-admin-react  
 
-### `npm run build`
+**Role in the system:**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Web-based **admin dashboard** for platform administrators.
+- Manage and monitor:
+  - Users (customers, mess owners, admins)
+  - Mess listings and details
+  - Platform operations and configuration
+- Provides an overview of the entire system to keep everything running smoothly.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+**Tech stack:**
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- React.js
+- JavaScript, HTML, CSS
+- Consumes APIs from the Spring Boot backend
 
-### `npm run eject`
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Mobile App – Flutter
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Repository:**  
+👉 https://github.com/DevTamakuwala/daily-dine-pro-flutter  
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+**Role in the system:**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- Main **mobile application** used by:
+  - **Customers** – discover nearby messes, view menus, interact with mess owners.
+  - **Mess Owners** – manage their mess profile, menu, and customer-facing information.
+  - **Admins** – limited admin functionality on mobile.
+- Provides the core daily experience for end users on Android/iOS.
+- Communicates with the Spring Boot backend for all data (auth, mess data, menus, etc.).
 
-## Learn More
+**Tech stack:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Flutter (Dart)
+- Targets Android (and can be extended to iOS)
+- Integrates with the Spring Boot API
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+### 3. Backend API – Spring Boot
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+**Repository:**  
+👉 https://github.com/DevTamakuwala/daily-dine-pro-spring-boot  
 
-### Analyzing the Bundle Size
+**Role in the system:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- **Central backend** that powers both:
+  - Flutter mobile app
+  - React admin panel
+- Responsibilities:
+  - User authentication & authorization
+  - Business logic for customers, mess owners, and admins
+  - Mess, menu, and related data management
+  - Exposes REST APIs for all frontends
+  - Integrates with a relational database for persistent storage
 
-### Making a Progressive Web App
+**Tech stack:**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- Java + Spring Boot
+- Maven for build
+- REST APIs for communication with clients
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 🧩 How Everything Fits Together
 
-### Deployment
+- The **Flutter App** and **React Admin Panel** both communicate with the **Spring Boot Backend** via REST APIs.
+- All **core data and business rules** live in the backend.
+- The **admin panel** focuses on management & oversight.
+- The **mobile app** focuses on daily usage by customers and mess owners.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
+## 📁 This Repository (daily-dine-pro-full-project)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This repo is meant to:
+
+- Give a **single place** to understand the full architecture.
+- Provide **links** to each codebase.
+- Explain **which repo does what** for easier navigation and onboarding.
+
+You can clone each repo individually as needed:
+
+```bash
+# Admin panel
+git clone https://github.com/DevTamakuwala/daily-dine-pro-admin-react
+
+# Flutter mobile app
+git clone https://github.com/DevTamakuwala/daily-dine-pro-flutter
+
+# Spring Boot backend
+git clone https://github.com/DevTamakuwala/daily-dine-pro-spring-boot
